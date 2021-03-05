@@ -3,6 +3,9 @@ package com.yangtao.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author yangtao
+ */
 @SpringBootApplication
 public class SpringBootMybatisPlusApplication {
 

@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/school?serverTimezone=GMT&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+    druid:
+      stat-view-servlet:  #druid 监控页功能
+        enabled: true
+        login-username: yangtao
+        login-password: 123456
+      web-stat-filter:  #druid 监控web功能
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'  #不监控
+        url-pattern: /*   #监控所有请求
+
+      aop-patterns: com.yaotao.*
+
+      filter:
+        wall:
+          config:
+            drop-table-allow: false  #设置防火墙不允许执行的操作
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.yangtao.springboot.entity
+  type-enums-package: com.yangtao.springboot.enums #枚举包扫描
+  global-config:
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+
+
+
