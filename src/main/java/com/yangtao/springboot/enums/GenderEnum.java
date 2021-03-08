@@ -1,7 +1,6 @@
 package com.yangtao.springboot.enums;
 
 import com.baomidou.mybatisplus.annotation.EnumValue;
-import org.springframework.stereotype.Component;
 
 /**
  * @author：杨涛

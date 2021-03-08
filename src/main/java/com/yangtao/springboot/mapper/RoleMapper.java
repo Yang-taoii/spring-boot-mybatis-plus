@@ -1,10 +1,17 @@
 package com.yangtao.springboot.mapper;
 
 
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yangtao.springboot.entity.Role;
+import com.yangtao.springboot.entity.RoleVo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
 
 
 /**
@@ -16,6 +23,10 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface RoleMapper extends BaseMapper<Role> {
+
+    List<RoleVo> selectConditionPage(@Param("gender") Integer gender,
+                                     @Param("countryid") Integer countryid,
+                                     Page<RoleVo> page);
 
 
 }

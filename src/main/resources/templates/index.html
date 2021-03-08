@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/page}" method="post">
+        <table>
+            <tr>
+                <td>uid</td>
+                <td>roleName</td>
+                <td>gender</td>
+                <td>countryName</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="查询">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yangtao.springboot.mapper.RoleMapper">
+
+    <select id="selectConditionPage" resultType="com.yangtao.springboot.entity.RoleVo">
+        select r.uid,r.uname roleName, r.gender,c.countryName
+        from role r
+        inner join country c
+        on c.countryid = r.countryid
+        <where>
+            <if test="gender!=null and gender!=''">and gender = #{gender}</if>
+            <if test="countryid!=null and countryid!=''">and c.countryid = #{countryid}</if>
+        </where>
+    </select>
+
+</mapper>

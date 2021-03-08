@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/school?serverTimezone=GMT&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/school?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
 
@@ -22,6 +22,11 @@ spring:
           config:
             drop-table-allow: false  #设置防火墙不允许执行的操作
 
+  resources:
+    static-locations: classpath:/templates/,classpath:/META-NF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  mvc:
+    static-path-pattern:/**
+
 
 mybatis-plus:
   configuration:
@@ -32,6 +37,8 @@ mybatis-plus:
     db-config:
       logic-not-delete-value: 0
       logic-delete-value: 1
+
+
 
 
 
