@@ -57,11 +57,11 @@ public class MyExcelView extends AbstractXlsView {
                 tempRow.createCell(2).setCellValue(role.getUname());
                 tempRow.createCell(3).setCellValue(role.getPassword());
                 tempRow.createCell(4).setCellValue(role.getCountryid());
-                if (role.getCreateTime() == null) {
-                    tempRow.createCell(5).setCellValue("");
+                if (role.getCreateTime() != null) {
+                    tempRow.createCell(5).setCellValue(role.getCreateTime());
                 }
-                if (role.getUpdateTime() == null) {
-                    tempRow.createCell(6).setCellValue("");
+                if (role.getUpdateTime() != null) {
+                    tempRow.createCell(6).setCellValue(role.getUpdateTime());
                 }
                 //tempRow.createCell(5).setCellValue(role.getCreateTime());
                 //tempRow.createCell(6).setCellValue(role.getUpdateTime());
