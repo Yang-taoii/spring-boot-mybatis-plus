@@ -5,22 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <form th:action="@{/page}" method="post">
-        <table>
-            <tr>
-                <td>uid</td>
-                <td>roleName</td>
-                <td>gender</td>
-                <td>countryName</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <input type="submit" value="查询">
-                </td>
-            </tr>
-        </table>
-
-    </form>
+<p>
+    将所有角色信息导出为Excel表格：<a th:href="@{/downloadList}" href="/downloadList">导出</a>
+</p>
 </body>
 </html>

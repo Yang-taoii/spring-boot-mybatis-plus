@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -27,21 +28,21 @@ class SpringBootMybatisPlusApplicationTests {
 
     @Test
     void contextLoads() {
-//       Role role = new Role();
-//       role.setUname("赵云");
-//       role.setPassword("112333");
-//       role.setCountryid(2);
-//       roleMapper.insert(role);
-//       log.info("role：{}",role);
+        Role role = new Role();
+        role.setUname("张辽");
+        role.setPassword("112333");
+        role.setCountryid(1);
+        roleMapper.insert(role);
+        log.info("role：{}", role);
     }
 
 
     @Test
     void Update() {
-//        Role role = roleMapper.selectById(66);
-//        role.setGender(GenderEnum.FEMALE);
-//        roleMapper.updateById(role);
-//        log.info("role：{}",role);
+        Role role = roleMapper.selectById(74);
+        role.setGender(GenderEnum.MAN);
+        roleMapper.updateById(role);
+        log.info("role：{}", role);
     }
 
 
@@ -85,11 +86,17 @@ class SpringBootMybatisPlusApplicationTests {
     @Test
     void selectConditionPage3() {
 
-        roleMapper.selectConditionPage(0,3,new Page<>(2,3)).forEach(System.out::println);
+        roleMapper.selectConditionPage(0, 3, new Page<>(2, 3)).forEach(System.out::println);
         String s = Integer.toBinaryString(-8);
-        log.info("--------------------------------> {}",s);
+        log.info("--------------------------------> {}", s);
     }
 
+
+    @Test
+    void list() {
+        List<Role> list = roleService.list();
+        log.info("---------> {}", list);
+    }
 
 
 }
